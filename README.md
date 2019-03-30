@@ -111,7 +111,7 @@ Put all your media queries at the bottom so they override your mobile CSS rules.
 Tablets: `768px`  
 Desktops: `1200px`
 
-Use **min-width** for your media queries. This is **mobile first** design approach:
+We will be doing mobile first design using **min-width** rules for the media queries.
 
 ```css
 @media (min-width: 768px) {
