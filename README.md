@@ -73,6 +73,9 @@ Size an <img> element like you would a background image, with properties like **
 `object-position`  
 Can be used like the `background-position` property
 
+`overflow`  
+Specify the behavior of overflowing content (e.g. can hide overflowing content)
+
 `-webkit-appearance: none`  
 Some elements (e.g. checkbox input) cannot be styled. Using this CSS property, the functionality of the element is kept but the look of the element can be created from scratch. The _webkit_ prefix is to use the chrome implementation of the `appearance` CSS property.
 
