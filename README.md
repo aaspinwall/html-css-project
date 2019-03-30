@@ -104,11 +104,20 @@ Use this to specify the height of new grid rows (vs. `grid-template-rows` where 
 
 ## Media queries
 
-I suggest putting all your media queries in one place (at the bottom for example.). You can use these values:  
+Use the following meta tag (put it first in the `<head>` section) to have the appropriate scale on all devices:  
+`<meta name="viewport" content="width=device-width, initial-scale=1.0">`
+
+Put all your media queries at the bottom so they override your mobile CSS rules. You can use these values:  
 Tablets: `768px`  
 Desktops: `1200px`
 
-Notice there is no value for mobile, you should do mobile first design. All your CSS rules are for mobile (smaller than 768px screen width). Then you can override the CSS rules inside your media queries for larger screen sizes.
+Use **min-width** for your media queries. This is **mobile first** design approach:
+
+```css
+@media (min-width: 768px) {
+  /* CSS Rules */
+}
+```
 
 ## Notes
 
