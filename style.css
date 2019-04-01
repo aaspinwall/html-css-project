@@ -1,0 +1,532 @@
+html {
+    scroll-behavior: smooth;
+  }
+
+body{
+    min-height: 100vh;
+    margin: 0px;
+    font-family: Poppins;
+}
+
+:root {
+    --palette-grey: rgb(63, 61, 61);
+    --textpadding: 100px 60px 200px 60px;
+    --section-mid: 500px;
+    --section-thin: 200px
+}
+
+h1, h2{
+    text-align: center;
+    display: block;
+}
+
+ul{
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+a, a:active, a:visited{
+    text-decoration: none;
+    color: white;
+}
+
+div{display: block}
+
+.nav1{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 57px;
+    padding: 0px;
+    background: var(--palette-grey);
+    color: white;
+    z-index: 10;
+}
+
+/* ------ LOGO ------ */
+
+/* Clickable logo */
+.nav1 > a{
+    height: 70px;
+    width: 100%;
+    z-index: 12;
+    position: relative;
+}
+
+/* Transparency */
+.nav1 i{transition: opacity ease-in-out 0.4s;}
+.nav1 > a:hover i{opacity: 0.5;}
+.inf1{
+    position: absolute;
+    top: 0px;
+    padding: 20px 20px;
+    font-size: x-large;
+    color: white;
+}
+.logo{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 50px;
+    height: 50px;
+}
+/* ------ NAVBAR ------ */
+.nav-toggle{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    text-align: right;
+    padding: 20px 40px;
+    font-size: x-large;
+}
+/* Toggle the menu */
+.nav-toggle:hover .nav-dropdown{
+    display: block;
+    position: fixed;
+    left: 0;
+}
+.nav-dropdown li{
+    padding: 20px;
+    font-family: Poppins;
+    text-align: center;
+    font-size: medium;
+}
+
+/* Change colour when hover */
+.nav-dropdown li:hover{background: gray}
+.products{display: none}
+
+/* Dropdown for mobile */
+.nav-dropdown{
+    position: absolute;
+    padding: 20px 0px 0px 0px;
+    width: 100%;
+    background: var(--palette-grey);
+    display: none;
+}
+
+/* ------ FALCON ------ */
+
+.falcon, .text, .images{
+    background: var(--palette-grey);
+    color: aliceblue;
+}
+
+.features, .mailing, .footer{
+    background: white;
+    color: black;    
+}
+
+.falcon{
+    background-image: url(imgs/bg.jpg);
+    text-align: center;
+    padding: 100px 0px;
+}
+
+.falcon-frame{
+    padding: 0px;
+    margin: 0px;    
+}
+
+.falcon-frame > h1:first-child{
+    background: transparent;
+}
+
+.falcon-frame > div, .falcon-frame > h1{
+    background: rgba(0, 0, 0, 0.301);
+    padding: 20px;
+    margin: 0px;
+    text-align: left;
+}
+
+/* ------ FEATURES ------ */
+
+.features{
+    display: grid;
+    padding: 30px 0px;
+    border-radius: 3px;
+    border: 1px black;
+    box-shadow: 1px 1px grey;
+}
+.features > div{
+    margin: 20px 50px;
+    border: grey 1px none;
+    padding: 20px;
+    border-radius: 3px;
+    box-shadow: 2px 2px 2px 2px rgba(128, 128, 128, 0.425);
+}
+.features > div > i{
+    display: block;
+    margin: 20px;
+    font-size: 2rem;
+    text-align: center;
+}
+.features > div > p{
+    text-align: center;
+}
+.features #button{
+    color: white;
+    background: var(--palette-grey);
+    padding: 10px;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+}
+
+.check{color: rgb(0, 167, 0)}
+.sync{color: rgb(3, 122, 233)}
+.finger{color: rgb(214, 0, 0)}
+
+/* ------ TEXT AND GRADIENT ------ */
+
+.text-container{
+    position: relative;
+}
+
+.text{text-align: left; padding: var(--textpadding)}
+.text > h1{text-align: left}
+.gradient{text-align: right;padding: var(--textpadding)}
+.gradient > h1{text-align: right}
+
+.floaty > h2{color: brown}
+
+.floaty{
+    position: absolute;
+    border: 10px white solid;
+    padding: 30px;
+    margin: 0px;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    background-color: black;
+    color: white;
+    transform-origin: center center;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes spin{
+    from{
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to{
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+.floaty:hover{
+    animation-name: spin;
+    animation-duration: 2s;
+}
+
+.gradient {
+    background-image: linear-gradient(to right, white, rgb(92, 181, 255));
+    color: white;
+  }
+
+/* ------ IMAGES ------ */
+
+.images {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+
+.img-container > img{
+    object-fit: cover;
+    width: 100%;
+    overflow: hidden;
+    transition: 0.7s ease-in-out transform;
+}
+
+.img-container{
+    height: 300px;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+}
+
+.img-container:hover > img{
+    transform: scale(1.2)
+}
+
+.img-container:hover::before{
+    content: "";
+    position: absolute;
+    background: rgba(0, 0, 0, 0.336);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.img-container:nth-child(1):hover::before{content: "Our flagship car: The model S"}
+.img-container:nth-child(2):hover::before{content: "Cool cat"}
+.img-container:nth-child(3):hover::before{content: "Intoducing: The Hyperloop"}
+.img-container:nth-child(4):hover::before{content: "So sneaky"}
+.img-container:nth-child(5):hover::before{content: "BFR Big Falcon Rocket"}
+.img-container:nth-child(6):hover::before{content: "So much fun"}
+
+/* ------ MAILING ------ */
+
+.mailing{
+    display: grid;
+    padding: 50px 80px;
+    border-bottom: dotted black 1px;
+    justify-content: center;
+}
+
+.mailing span{
+    padding: 20px
+}
+
+.mailing .cont{
+    border: 2px solid var(--palette-grey);
+    padding: 0px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.mailing-container{
+    display: grid;
+}
+
+.mailing input{
+    width: 100%;
+    margin: 0px;
+    border: transparent;
+    font-size: large;
+    padding: 10px;   
+}
+
+.mailing .bot input{
+    width: auto;
+}
+
+.mailing-container > input {
+    display: inline;
+}
+
+.plane{
+    background: var(--palette-grey);
+    padding: 20px;
+    color: white;
+    margin: 0px;
+    right: 0;
+}
+
+/* ------ FOOTER ------ */
+.footer{
+    display: grid;
+    padding: 0px 50px;
+    grid-template-columns: 2fr 2fr;
+}
+.footer ul{
+    padding-top: 40px;
+}
+
+@media (min-width: 768px){
+
+    .fa-bars:before {
+        content: "";
+        display: none;
+    }
+    .nav-toggle::before{content: none; display: none;}
+    
+    .nav-dropdown, .nav-toggle:hover .nav-dropdown{
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding: 0px 0px 0px 100px;
+        background: none;
+    }
+
+    .dropdown-menu{
+        display: flex;
+        justify-content: space-around;
+        width: 90%;
+    }
+
+    .nav-text{position: relative;}
+
+    .nav-dropdown li:hover{background: transparent}
+    .dropdown-menu > a:hover li::after, .products:hover::after{
+        z-index: 20;
+        animation-name: barswipe;
+        animation-duration: 1s;    
+        width: 100%;
+    }
+    .products{display: block}
+    .nav-dropdown a:hover a::after{
+        border: solid white 2px;
+    }
+    
+    li::after{
+        position: absolute;
+        content: "";
+        display: block;
+        top: 37px;
+        left: 0;
+        width: 0%;
+        border-bottom: 4px white solid;
+        padding-bottom: 16px;        
+    }
+    .products:hover .products-sub{
+        display: block;
+    }
+
+    ul.products-sub{
+        position: absolute;
+        display: none;
+        left: 0;
+        right: 0;
+        padding: 20px 0px 0px 0px;
+        background: var(--palette-grey);
+    }
+    .products-sub li:hover{
+        background: grey;
+    }
+    @keyframes barswipe{
+        from{
+            width: 0%;
+        }
+        to{
+            width: 100%;
+        }
+    }
+
+ /*    .nav-dropdown li:last-child{
+        display: block;
+    } */
+
+    .nav > div > i:first-child{display: none}
+
+    .falcon-frame{
+        border: 5px white solid;
+        display: grid;
+        grid-template-rows: 0.7fr 0.5fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+            "title title"
+            "subtitle subtitle"
+            "cont1 cont2"
+    }  
+
+    .falcon-frame > h1:first-child {font-size: 4rem}
+    .falcon-frame > h1:nth-child(2) {font-size: 3rem}
+
+    .falcon-frame > h1, .falcon-frame > div {display: flex; justify-content: left; align-items: center; padding: 40px}
+
+    .falcon-frame > h1:nth-child(1){grid-area: title}
+    .falcon-frame > h1:nth-child(2){grid-area: subtitle}
+    .falcon-frame > div:nth-child(3){grid-area: cont1}
+    .falcon-frame > div:nth-child(4){grid-area: cont2}
+    .falcon-frame > div{border-top: dotted white 1px}
+
+    .falcon{padding: 120px 60px 50px 60px}
+
+    .floaty{
+        position: absolute;
+        border: 10px white solid;
+        padding: 30px;
+        margin: 0px;
+        top: 50%;
+        left: 20%;
+        text-align: center;
+        background-color: black;
+        color: white;
+        transform-origin: center center;
+    }
+    
+    @keyframes spin{
+        from{
+            transform: translate(-50%, -50%) rotate(0deg);
+        }
+        30%{
+            transform: translate(0%, -50%) rotate(180deg);
+            opacity: 1;
+        }
+        40%{
+            transform: translate(0%, -50%) rotate(180deg) scale(1);
+            opacity: 1;
+        }
+        75%{
+            transform: translate(0%, -50%) rotate(180deg) scale(0.8);
+            opacity: 1;
+        }
+        85%{
+            transform: translate(0%, -50%) rotate(180deg) scale(0);
+            opacity: 0;
+        }
+        100%{
+            transform: translate(-50%, -50%) rotate(0deg);
+        }
+    }
+    
+    .floaty:hover{
+        animation-name: spin;
+        animation-duration: 4s;
+    }
+
+    .images {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+    .images > img{
+        height: 200px;
+    }   
+
+    .mailing{
+
+    }
+
+    .footer{
+        display: flex;
+        padding: 50px;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+}
+@media (min-width: 1200px){
+
+    .dropdown-menu{
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+
+    .falcon-frame{
+        border: 5px white solid;
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "title subtitle subtitle"
+            "title cont1 cont2"
+    }
+
+    .falcon-frame > h1, .falcon-frame > div {display: flex; justify-items: center; align-items: center; padding: 40px}
+
+    .features{display: flex;}
+
+    .images {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+    .images > img{
+        height: 300px;
+    }
+    .footer{
+    display: flex;
+    padding: 50px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}  
+    
+}
